@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102d39"><title>Pulso | Monitor de Consumo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow"><span class="pulse"></span> MINERAÇÃO DE DADOS · DBSCAN</div>
+      <h1>Pulso<span class="period">.</span></h1>
+      <p>Entenda se uma leitura de energia está dentro do padrão esperado para aquele horário.</p>
+      <div class="hero-note">DADOS DIDÁTICOS · SEM MEDIÇÕES REAIS</div>
+    </header>
+
+    <section class="summary" aria-label="Resumo do modelo">
+      <div><span class="summary-label">LEITURAS NA BASE</span><strong id="count">Carregando…</strong></div>
+      <div><span class="summary-label">TÉCNICA</span><strong>DBSCAN</strong></div>
+      <div><span class="summary-label">DETECÇÃO NO TESTE</span><strong id="f1">Carregando…</strong></div>
+    </section>
+
+    <section class="grid">
+      <article class="card form-card">
+        <div class="section-kicker">ANÁLISE INDIVIDUAL</div>
+        <h2>Verifique uma leitura</h2>
+        <p class="muted">Informe a hora e o consumo registrado naquele período.</p>
+        <form id="reading-form" novalidate>
+          <label for="hour">Hora do dia <span>0 a 23,99 · exemplo: 8,5 = 8h30</span></label>
+          <input id="hour" name="hour" type="number" min="0" max="23.99" step="0.25" value="20" required>
+          <label for="consumption">Consumo em kWh <span>0 a 50 kWh por hora</span></label>
+          <input id="consumption" name="consumption" type="number" min="0" max="50" step="0.05" value="1.2" required>
+          <button type="submit">Verificar leitura</button>
+        </form>
+        <div id="result" class="result hidden" aria-live="polite"></div>
+        <div class="divider"></div>
+        <div class="section-kicker">ANÁLISE EM LOTE</div>
+        <h3>Carregue um CSV</h3>
+        <p class="muted">Cabeçalhos obrigatórios: <code>hora,consumo_kwh</code></p>
+        <label class="file-label" for="csv-file">Escolher arquivo CSV</label>
+        <input id="csv-file" type="file" accept=".csv,text/csv" class="file-input">
+        <div id="batch-message" class="batch-message" aria-live="polite"></div>
+        <button id="download" class="secondary hidden" type="button">Baixar resultados CSV</button>
+      </article>
+
+      <article class="card chart-card">
+        <div class="chart-head"><div><div class="section-kicker">PADRÃO DE CONSUMO</div><h2>Mapa de leituras</h2></div><div class="chart-tag">● Dados simulados</div></div>
+        <p class="muted">Os pontos mostram leituras típicas e casos artificiais fora do padrão.</p>
+        <div class="chart-wrap"><canvas id="chart" aria-label="Gráfico de hora do dia versus consumo em quilowatt-hora"></canvas></div>
+        <div class="legend"><span><i class="dot normal-dot"></i>Padrão simulado</span><span><i class="dot anomaly-dot"></i>Anomalia simulada</span><span><i class="dot input-dot">★</i>Sua leitura</span></div>
+        <div class="metric-row">
+          <div class="metric"><span>PRECISÃO</span><strong id="precision">—</strong></div>
+          <div class="metric"><span>REVOCAÇÃO</span><strong id="recall">—</strong></div>
+          <div class="metric"><span>F1</span><strong id="f1-small">—</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <details class="how-card" open>
+      <summary><span><span class="section-kicker">TRANSPARÊNCIA</span><br><strong>Como funciona</strong></span><span class="chevron">⌄</span></summary>
+      <div class="how-content">
+        <div><h3>Algoritmo</h3><p>O DBSCAN agrupa pontos próximos. Leituras sem vizinhos suficientes dentro do raio <code>eps</code> são tratadas como ruído e sinalizadas.</p></div>
+        <div><h3>Dados</h3><p>Base sintética de 1.600 leituras, gerada em Python com picos de manhã/noite, ruído e 6% de anomalias artificiais. Nenhuma medição real.</p></div>
+        <div><h3>Novas leituras</h3><p>DBSCAN é transdutivo e não oferece <code>predict</code>. Para uma entrada nova, o site verifica se existe um núcleo DBSCAN a até <code>eps</code> de distância, após padronização. Sem núcleo, sinaliza ruído.</p></div>
+        <div><h3>Limitações</h3><p>O perfil residencial é simplificado e não considera clima, imóvel ou equipamentos. Use o alerta para conferir a leitura; não é diagnóstico técnico nem previsão de conta.</p></div>
+      </div>
+      <p class="validation-note" id="validation">Avaliando o modelo…</p>
+    </details>
+    <footer>Projeto acadêmico de Mineração de Dados · Leituras simuladas para fins didáticos</footer>
+  </main>
+  <script src="app-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

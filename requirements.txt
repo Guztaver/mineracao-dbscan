@@ -1,0 +1,1 @@
+# Projeto executado somente com a biblioteca padrão do Python 3.11+.
