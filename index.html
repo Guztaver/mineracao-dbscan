@@ -1,72 +1,140 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#102d39"><title>Pulso | Monitor de Consumo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071a2b">
+  <meta name="description" content="Explore leituras de consumo elétrico com DBSCAN em uma base didática de dados simulados.">
+  <title>Pulso — Mapa de densidade do consumo</title>
+  <link rel="preload" href="fonts/barlow-semi-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="page">
-    <header class="hero">
-      <div class="eyebrow"><span class="pulse"></span> MINERAÇÃO DE DADOS · DBSCAN</div>
-      <h1>Pulso<span class="period">.</span></h1>
-      <p>Entenda se uma leitura de energia está dentro do padrão esperado para aquele horário.</p>
-      <div class="hero-note">DADOS DIDÁTICOS · SEM MEDIÇÕES REAIS</div>
+    <header class="masthead">
+      <a class="brand" href="#inicio" aria-label="Pulso, início">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M4 21h7l4-11 8 21 5-14 3 4h5" />
+          <circle cx="32" cy="21" r="2.5" />
+        </svg>
+        <span><strong>Pulso</strong><small>Leituras de energia</small></span>
+      </a>
+      <div class="masthead-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Base de demonstração</span>
+        <span class="status-divider" aria-hidden="true"></span>
+        <span><span id="count">—</span> leituras</span>
+      </div>
     </header>
 
-    <section class="summary" aria-label="Resumo do modelo">
-      <div><span class="summary-label">LEITURAS NA BASE</span><strong id="count">Carregando…</strong></div>
-      <div><span class="summary-label">TÉCNICA</span><strong>DBSCAN</strong></div>
-      <div><span class="summary-label">DETECÇÃO NO TESTE</span><strong id="f1">Carregando…</strong></div>
-    </section>
-
-    <section class="grid">
-      <article class="card form-card">
-        <div class="section-kicker">ANÁLISE INDIVIDUAL</div>
-        <h2>Verifique uma leitura</h2>
-        <p class="muted">Informe a hora e o consumo registrado naquele período.</p>
-        <form id="reading-form" novalidate>
-          <label for="hour">Hora do dia <span>0 a 23,99 · exemplo: 8,5 = 8h30</span></label>
-          <input id="hour" name="hour" type="number" min="0" max="23.99" step="0.25" value="20" required>
-          <label for="consumption">Consumo em kWh <span>0 a 50 kWh por hora</span></label>
-          <input id="consumption" name="consumption" type="number" min="0" max="50" step="0.05" value="1.2" required>
-          <button type="submit">Verificar leitura</button>
-        </form>
-        <div id="result" class="result hidden" aria-live="polite"></div>
-        <div class="divider"></div>
-        <div class="section-kicker">ANÁLISE EM LOTE</div>
-        <h3>Carregue um CSV</h3>
-        <p class="muted">Cabeçalhos obrigatórios: <code>hora,consumo_kwh</code></p>
-        <label class="file-label" for="csv-file">Escolher arquivo CSV</label>
-        <input id="csv-file" type="file" accept=".csv,text/csv" class="file-input">
-        <div id="batch-message" class="batch-message" aria-live="polite"></div>
-        <button id="download" class="secondary hidden" type="button">Baixar resultados CSV</button>
-      </article>
-
-      <article class="card chart-card">
-        <div class="chart-head"><div><div class="section-kicker">PADRÃO DE CONSUMO</div><h2>Mapa de leituras</h2></div><div class="chart-tag">● Dados simulados</div></div>
-        <p class="muted">Os pontos mostram leituras típicas e casos artificiais fora do padrão.</p>
-        <div class="chart-wrap"><canvas id="chart" aria-label="Gráfico de hora do dia versus consumo em quilowatt-hora"></canvas></div>
-        <div class="legend"><span><i class="dot normal-dot"></i>Padrão simulado</span><span><i class="dot anomaly-dot"></i>Anomalia simulada</span><span><i class="dot input-dot">★</i>Sua leitura</span></div>
-        <div class="metric-row">
-          <div class="metric"><span>PRECISÃO</span><strong id="precision">—</strong></div>
-          <div class="metric"><span>REVOCAÇÃO</span><strong id="recall">—</strong></div>
-          <div class="metric"><span>F1</span><strong id="f1-small">—</strong></div>
-        </div>
-      </article>
-    </section>
-
-    <details class="how-card" open>
-      <summary><span><span class="section-kicker">TRANSPARÊNCIA</span><br><strong>Como funciona</strong></span><span class="chevron">⌄</span></summary>
-      <div class="how-content">
-        <div><h3>Algoritmo</h3><p>O DBSCAN agrupa pontos próximos. Leituras sem vizinhos suficientes dentro do raio <code>eps</code> são tratadas como ruído e sinalizadas.</p></div>
-        <div><h3>Dados</h3><p>Base sintética de 1.600 leituras, gerada em Python com picos de manhã/noite, ruído e 6% de anomalias artificiais. Nenhuma medição real.</p></div>
-        <div><h3>Novas leituras</h3><p>DBSCAN é transdutivo e não oferece <code>predict</code>. Para uma entrada nova, o site verifica se existe um núcleo DBSCAN a até <code>eps</code> de distância, após padronização. Sem núcleo, sinaliza ruído.</p></div>
-        <div><h3>Limitações</h3><p>O perfil residencial é simplificado e não considera clima, imóvel ou equipamentos. Use o alerta para conferir a leitura; não é diagnóstico técnico nem previsão de conta.</p></div>
+    <section class="intro" id="inicio" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">Leia a paisagem do consumo</h1>
+        <p>Cada ponto ocupa seu lugar conforme a hora e a energia medida. Veja onde uma nova leitura encontra o padrão.</p>
       </div>
-      <p class="validation-note" id="validation">Avaliando o modelo…</p>
+      <span class="data-note">Dados simulados · sem medições reais</span>
+    </section>
+
+    <section class="workspace" aria-label="Análise de consumo">
+      <article class="reading-panel" aria-labelledby="reading-title">
+        <h2 id="reading-title">Localize uma leitura</h2>
+        <p class="panel-copy">Informe os valores para posicioná-la no mapa de densidade.</p>
+        <form id="reading-form" novalidate>
+          <div class="field">
+            <label for="hour">Hora do dia</label>
+            <span class="field-hint" id="hour-hint">De 0 a 23,99 · 8,5 corresponde a 8h30</span>
+            <div class="input-wrap">
+              <input id="hour" name="hour" type="number" min="0" max="23.99" step="0.25" value="20" required inputmode="decimal" aria-describedby="hour-hint">
+              <span aria-hidden="true">h</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="consumption">Consumo</label>
+            <span class="field-hint" id="consumption-hint">Energia registrada naquela hora</span>
+            <div class="input-wrap">
+              <input id="consumption" name="consumption" type="number" min="0" max="50" step="0.05" value="1.2" required inputmode="decimal" aria-describedby="consumption-hint">
+              <span aria-hidden="true">kWh</span>
+            </div>
+          </div>
+          <button class="primary-button" type="submit">
+            <span>Verificar no mapa</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" /></svg>
+          </button>
+        </form>
+        <div id="result" class="result" aria-live="polite" aria-atomic="true"></div>
+
+        <details class="csv-section">
+          <summary>
+            <span>Ou analisar várias leituras</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" /></svg>
+          </summary>
+          <div class="csv-content">
+            <p>Envie um CSV com as colunas <code>hora</code> e <code>consumo_kwh</code>.</p>
+            <label class="file-label" for="csv-file">Escolher arquivo CSV</label>
+            <input id="csv-file" type="file" accept=".csv,text/csv" class="file-input">
+            <div id="batch-message" class="batch-message" role="status" aria-live="polite"></div>
+            <button id="download" class="download-button hidden" type="button">Baixar resultados CSV</button>
+          </div>
+        </details>
+      </article>
+
+      <article class="map-panel" aria-labelledby="map-title">
+        <div class="map-heading">
+          <div>
+            <h2 id="map-title">Campo de densidade</h2>
+            <p>Hora do dia × consumo em kWh</p>
+          </div>
+          <span class="map-status"><span aria-hidden="true"></span> Concentração DBSCAN</span>
+        </div>
+        <figure class="map-figure">
+          <div class="chart-wrap">
+            <canvas id="chart" role="img" aria-label="Mapa de densidade das leituras sintéticas por hora e consumo. As linhas mostram regiões com concentração de pontos do DBSCAN."></canvas>
+          </div>
+          <figcaption class="legend">
+            <span><i class="legend-dot regular" aria-hidden="true"></i>Leitura simulada</span>
+            <span><i class="legend-dot generated" aria-hidden="true"></i>Anomalia simulada</span>
+            <span><i class="legend-contour" aria-hidden="true"></i>Área de maior densidade</span>
+            <span><i class="legend-dot submitted" aria-hidden="true"></i>Sua leitura</span>
+          </figcaption>
+        </figure>
+        <p class="map-caption">As linhas são calculadas a partir dos pontos centrais do DBSCAN. A cor âmbar destaca somente a entrada analisada.</p>
+      </article>
+    </section>
+
+    <details class="explanation">
+      <summary>
+        <span><strong>Como funciona</strong><small>Técnica, dados e avaliação do modelo</small></span>
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m4 7 5 5 5-5" /></svg>
+      </summary>
+      <div class="explanation-content">
+        <section>
+          <h3>DBSCAN e novas leituras</h3>
+          <p>O DBSCAN forma grupos de pontos próximos. O site compara uma entrada aos pontos centrais do grupo mais próximo; se nenhum estiver dentro do raio <code>eps</code>, sinaliza a leitura como fora do padrão. O alerta é uma indicação para conferência, não um diagnóstico.</p>
+        </section>
+        <section>
+          <h3>Base simulada</h3>
+          <p>São 1.600 leituras sintéticas, geradas em Python com picos de manhã e à noite, ruído e 6% de anomalias artificiais. Nenhuma medição real foi usada.</p>
+        </section>
+        <section>
+          <h3>Avaliação no conjunto de teste</h3>
+          <div class="metrics" aria-label="Métricas calculadas sobre anomalias simuladas">
+            <div><span>Precisão</span><strong id="precision">—</strong></div>
+            <div><span>Revocação</span><strong id="recall">—</strong></div>
+            <div><span>F1</span><strong id="f1">—</strong></div>
+          </div>
+          <p id="validation" class="validation-note">Carregando avaliação…</p>
+        </section>
+        <section>
+          <h3>Limitações</h3>
+          <p>O perfil é simplificado e não inclui clima, tipo de imóvel nem equipamentos. As métricas medem apenas os rótulos artificiais deste conjunto e não demonstram desempenho em residências reais.</p>
+        </section>
+      </div>
     </details>
-    <footer>Projeto acadêmico de Mineração de Dados · Leituras simuladas para fins didáticos</footer>
+
+    <footer class="footer">
+      <span>Pulso · Projeto acadêmico de Mineração de Dados</span>
+      <span>As leituras e anomalias são simuladas para fins didáticos.</span>
+    </footer>
   </main>
   <script src="app-data.js"></script>
   <script src="app.js"></script>

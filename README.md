@@ -44,8 +44,9 @@ O modelo implementa DBSCAN (`eps=0.42`, `min_samples=12`) em Python puro sobre h
 ```text
 app.py                   servidor local sem dependências externas
 index.html, styles.css   interface responsiva
-app.js                   interface, validação e inferência DBSCAN
+app.js                   interface, validação, inferência e mapa de densidade
 app-data.js              dados e pontos centrais para a versão estática
+fonts/                   Barlow Semi Condensed local, licenciada em SIL OFL 1.1
 src/generate_data.py     gerador de dados reproduzíveis
 src/model.py             treino, avaliação, persistência e inferência DBSCAN
 data/                    CSV usado pelo site

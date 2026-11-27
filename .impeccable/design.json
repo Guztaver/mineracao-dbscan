@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T03:25:07.418617Z",
+  "title": "Design System: Pulso",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Sounding Amber",
+        "canonical": "#ffc36b",
+        "tonalRamp": [
+          "#382306",
+          "#704300",
+          "#a36100",
+          "#d67f00",
+          "#ffa014",
+          "#ffb952",
+          "#ffd28f",
+          "#f9eddc"
+        ]
+      },
+      "primary-ink": {
+        "role": "neutral",
+        "displayName": "Ink on Amber",
+        "canonical": "#172333",
+        "tonalRamp": [
+          "#151d28",
+          "#23354d",
+          "#334d70",
+          "#436594",
+          "#5d83b6",
+          "#87a4c9",
+          "#b2c4dc",
+          "#e5eaf0"
+        ]
+      },
+      "page-bg": {
+        "role": "neutral",
+        "displayName": "Night Field",
+        "canonical": "#071a2b",
+        "tonalRamp": [
+          "#0d2031",
+          "#103a60",
+          "#17558c",
+          "#1e6fb8",
+          "#358ede",
+          "#6aace7",
+          "#9fc9ef",
+          "#e0ebf5"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Ink",
+        "canonical": "#0c2236",
+        "tonalRamp": [
+          "#0f1f2e",
+          "#143a5c",
+          "#1e5486",
+          "#276eaf",
+          "#3f8dd4",
+          "#71abdf",
+          "#a3c9eb",
+          "#e1ebf4"
+        ]
+      },
+      "panel-bg": {
+        "role": "neutral",
+        "displayName": "Slate Panel",
+        "canonical": "#122d43",
+        "tonalRamp": [
+          "#10202d",
+          "#183b58",
+          "#235681",
+          "#2d71a9",
+          "#4691cd",
+          "#76adda",
+          "#a7cae7",
+          "#e2ebf3"
+        ]
+      },
+      "plot-bg": {
+        "role": "neutral",
+        "displayName": "Plot Basin",
+        "canonical": "#0a2033",
+        "tonalRamp": [
+          "#0e202f",
+          "#123b5e",
+          "#1b5688",
+          "#2370b3",
+          "#3b8fd9",
+          "#6eade3",
+          "#a1caed",
+          "#e1ebf4"
+        ]
+      },
+      "text-strong": {
+        "role": "neutral",
+        "displayName": "Map Ink",
+        "canonical": "#f0f5f6",
+        "tonalRamp": [
+          "#182325",
+          "#2a4146",
+          "#3d5f66",
+          "#507d86",
+          "#6c9da7",
+          "#93b7be",
+          "#b9d0d5",
+          "#e7edee"
+        ]
+      },
+      "text-soft": {
+        "role": "neutral",
+        "displayName": "Sounding Notes",
+        "canonical": "#c5d5dd",
+        "tonalRamp": [
+          "#182125",
+          "#293d47",
+          "#3c5967",
+          "#4f7487",
+          "#6b94a8",
+          "#92b0bf",
+          "#b8ccd6",
+          "#e7ecee"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Chart Mist",
+        "canonical": "#a6bbc6",
+        "tonalRamp": [
+          "#192024",
+          "#2c3c44",
+          "#405763",
+          "#547283",
+          "#7092a3",
+          "#95aebb",
+          "#bbcbd3",
+          "#e7ecee"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Sounding Rule",
+        "canonical": "#29485f",
+        "tonalRamp": [
+          "#152029",
+          "#223b4e",
+          "#315672",
+          "#417196",
+          "#5b91b8",
+          "#86adcb",
+          "#b1cadd",
+          "#e5ebf0"
+        ]
+      },
+      "border-bright": {
+        "role": "neutral",
+        "displayName": "Bright Rule",
+        "canonical": "#41647b",
+        "tonalRamp": [
+          "#172026",
+          "#273c49",
+          "#38576b",
+          "#4a728c",
+          "#6691ae",
+          "#8eaec3",
+          "#b6cad8",
+          "#e6ecef"
+        ]
+      },
+      "contour": {
+        "role": "secondary",
+        "displayName": "Ice Contour",
+        "canonical": "#78b5cd",
+        "tonalRamp": [
+          "#13242a",
+          "#1e4352",
+          "#2c6277",
+          "#3a819c",
+          "#54a1c0",
+          "#80bad0",
+          "#add2e1",
+          "#e4edf1"
+        ]
+      },
+      "contour-light": {
+        "role": "secondary",
+        "displayName": "Pale Contour",
+        "canonical": "#b9d9e5",
+        "tonalRamp": [
+          "#13242a",
+          "#1e4452",
+          "#2c6377",
+          "#3a819c",
+          "#54a2bf",
+          "#81bad0",
+          "#add3e1",
+          "#e4eef1"
+        ]
+      },
+      "anomaly": {
+        "role": "tertiary",
+        "displayName": "Reading Violet",
+        "canonical": "#b3a1f7",
+        "tonalRamp": [
+          "#120a34",
+          "#1d0967",
+          "#2a0d96",
+          "#3711c5",
+          "#5027ed",
+          "#7e5ff1",
+          "#ab98f6",
+          "#e4def7"
+        ]
+      },
+      "success": {
+        "role": "secondary",
+        "displayName": "Current Green",
+        "canonical": "#76d6b0",
+        "tonalRamp": [
+          "#112c21",
+          "#1a563e",
+          "#267e5b",
+          "#31a577",
+          "#4ac997",
+          "#7ad7b2",
+          "#a9e5cd",
+          "#e3f2ec"
+        ]
+      },
+      "error": {
+        "role": "tertiary",
+        "displayName": "Alert Rose",
+        "canonical": "#ff9990",
+        "tonalRamp": [
+          "#380a06",
+          "#700900",
+          "#a30d00",
+          "#d61100",
+          "#ff2714",
+          "#ff6052",
+          "#ff988f",
+          "#f9dfdc"
+        ]
+      },
+      "success-bg": {
+        "role": "secondary",
+        "displayName": "Normal State Field",
+        "canonical": "#123c3a",
+        "tonalRamp": [
+          "#112c2b",
+          "#1a5653",
+          "#267e79",
+          "#31a59f",
+          "#4bc9c3",
+          "#7ad7d3",
+          "#a9e5e2",
+          "#e3f2f2"
+        ]
+      },
+      "alert-bg": {
+        "role": "tertiary",
+        "displayName": "Alert State Field",
+        "canonical": "#45351f",
+        "tonalRamp": [
+          "#282015",
+          "#4d3b23",
+          "#715633",
+          "#947242",
+          "#b6915d",
+          "#c9ae87",
+          "#dccab2",
+          "#f0ebe5"
+        ]
+      },
+      "error-bg": {
+        "role": "tertiary",
+        "displayName": "Error State Field",
+        "canonical": "#462829",
+        "tonalRamp": [
+          "#251818",
+          "#47292a",
+          "#683b3d",
+          "#884e50",
+          "#aa6a6c",
+          "#c09192",
+          "#d6b8b9",
+          "#efe7e7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Survey Title",
+        "purpose": "Responsive task headline and section hierarchy."
+      },
+      "body": {
+        "displayName": "Field Notes",
+        "purpose": "Instructions, metrics, and explanatory copy."
+      },
+      "label": {
+        "displayName": "Chart Labels",
+        "purpose": "Fields, units, legends, and status."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-feedback",
+        "value": "background-color .16s ease, transform .16s ease",
+        "purpose": "Small response on the primary action; reduced-motion disables transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-contrast action that places the submitted measurement on the map.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\"><span>Verificar no mapa</span><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M3 10h13M10 4l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn-primary{min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;border:1px solid #fbd18f;border-radius:9px;background:#ffc36b;color:#172333;font:600 15px \"Barlow Semi Condensed\",sans-serif;cursor:pointer;transition:background-color .16s ease,transform .16s ease}.ds-btn-primary:hover{background:#ffd18a;transform:translateY(-1px)}.ds-btn-primary:focus-visible{outline:3px solid #ffc36b;outline-offset:3px}.ds-btn-primary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Measurement Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Numeric reading with its unit held in a single well.",
+      "html": "<label class=\"ds-field\"><span>Consumo</span><span class=\"ds-input\"><input type=\"number\" value=\"1.2\"><span>kWh</span></span></label>",
+      "css": ".ds-field{display:grid;gap:5px;color:#f0f5f6;font:600 15px \"Barlow Semi Condensed\",sans-serif}.ds-input{min-height:49px;display:flex;align-items:center;border:1px solid #57758a;border-radius:9px;background:#0c2236}.ds-input input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#f0f5f6;padding:11px 12px;font:400 18px \"Barlow Semi Condensed\",sans-serif}.ds-input>span{padding:0 13px 0 4px;color:#a6bbc6;font-size:14px}.ds-input:focus-within{border-color:#b9d9e5}.ds-input:focus-within input:focus-visible{outline:0}"
+    },
+    {
+      "name": "Contour Map Panel",
+      "kind": "custom",
+      "refersTo": "density-map",
+      "description": "The central plot surface for core-point density, simulated readings, and a submitted point.",
+      "html": "<section class=\"ds-map\"><h3>Campo de densidade</h3><p>Hora do dia × consumo em kWh</p><canvas aria-label=\"Mapa de densidade calculado a partir dos pontos centrais do DBSCAN\"></canvas></section>",
+      "css": ".ds-map{overflow:hidden;border:1px solid #29485f;border-radius:14px;background:#0a2033;color:#f0f5f6;padding:20px}.ds-map h3{margin:0;font:600 22px/1.1 \"Barlow Semi Condensed\",sans-serif}.ds-map p{margin:5px 0 14px;color:#a6bbc6;font:400 14px \"Barlow Semi Condensed\",sans-serif}.ds-map canvas{display:block;width:100%;height:240px;background:#0a2033;border-block:1px solid #29485f}"
+    },
+    {
+      "name": "Reading Result",
+      "kind": "custom",
+      "refersTo": "result",
+      "description": "Text and a state tint identify whether the new point lies within the modeled density.",
+      "html": "<div class=\"ds-result\"><strong>Leitura dentro do padrão</strong><span>Este ponto fica próximo de uma região densa.</span></div>",
+      "css": ".ds-result{display:grid;gap:4px;padding:12px 13px;border:1px solid #4c9c82;border-radius:9px;background:#123c3a;color:#ddf8eb;font:400 14px/1.4 \"Barlow Semi Condensed\",sans-serif}.ds-result strong{font-weight:600}.ds-result[aria-invalid=\"true\"]{border-color:#bd6c68;background:#462829;color:#ffe4e0}"
+    },
+    {
+      "name": "Dataset Status",
+      "kind": "chip",
+      "refersTo": "dataset-status",
+      "description": "A small status row labels the dataset as a demonstration before the chart is read.",
+      "html": "<span class=\"ds-status\"><i></i>Base de demonstração</span>",
+      "css": ".ds-status{display:inline-flex;align-items:center;gap:8px;border:1px solid #41647b;border-radius:999px;padding:7px 12px;color:#d0e4ed;font:400 13px \"Barlow Semi Condensed\",sans-serif}.ds-status i{width:8px;height:8px;border-radius:50%;background:#76d6b0;box-shadow:0 0 0 4px #76d6b01d}"
+    },
+    {
+      "name": "Disclosure",
+      "kind": "custom",
+      "refersTo": "explanation",
+      "description": "Expandable method and metric information stays available without competing with the core task.",
+      "html": "<details class=\"ds-disclosure\"><summary>Como funciona<svg viewBox=\"0 0 18 18\" aria-hidden=\"true\"><path d=\"m4 7 5 5 5-5\"/></svg></summary><p>DBSCAN calcula grupos a partir de pontos próximos.</p></details>",
+      "css": ".ds-disclosure{border:1px solid #29485f;border-radius:14px;background:#0c2236;color:#f0f5f6}.ds-disclosure summary{min-height:56px;display:flex;align-items:center;justify-content:space-between;padding:11px 15px;cursor:pointer;list-style:none;font:600 18px \"Barlow Semi Condensed\",sans-serif}.ds-disclosure summary:focus-visible{outline:3px solid #ffc36b;outline-offset:3px}.ds-disclosure svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6}.ds-disclosure p{padding:0 15px 15px;color:#a6bbc6;font:400 14px/1.5 \"Barlow Semi Condensed\",sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Carta de Sondagem",
+    "overview": "Pulso treats the consumption chart as a field to investigate. Density contours are calculated from the model's DBSCAN core points; a submitted reading is plotted in the same coordinate space. Familiar web controls keep the data task clear, while synthetic readings remain labeled as demonstrations.",
+    "keyCharacteristics": [
+      "Data-derived contours are the signature visual.",
+      "Amber marks the primary action and the user's submitted reading.",
+      "The chart and input stay readable as a standard web tool.",
+      "Synthetic data and model limits remain visible in context."
+    ],
+    "rules": [
+      {
+        "name": "The Single Marker Rule",
+        "body": "Amber belongs to the primary action and the user's input. Keep simulated anomaly points violet and typical points blue so the legend remains unambiguous.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Family Rule",
+        "body": "Use Barlow Semi Condensed throughout; do not introduce a display face for decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The Layered Field Rule",
+        "body": "Use a darker plot plane inside a raised page surface; use borders to clarify panel edges.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep sampled data, density lines, and submitted marker distinct in the legend.",
+      "Do use contours only for the calculated DBSCAN core-point field.",
+      "Do preserve the synthetic-data note and limitations near the task.",
+      "Do keep chart labels and controls readable on small screens."
+    ],
+    "donts": [
+      "Don't use the anomaly alert as a diagnosis or prediction.",
+      "Don't use amber for simulated anomaly points.",
+      "Don't add decorative contour geometry outside the chart field.",
+      "Don't rely on color alone for reading status."
+    ]
+  }
+}
