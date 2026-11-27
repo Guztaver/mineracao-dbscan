@@ -23,4 +23,8 @@ O perfil é simplificado e não considera clima, estação do ano, tipo de imóv
 
 ## Divisão de tarefas
 
-Proposta a confirmar pela dupla: **Alex Gabriel Alves dos Santos** — revisar gerador, DBSCAN e avaliação; **Gustavo Muniz dos Anjos** — integrar site, validação de entradas e visualização; **ambos** — conferir métricas, revisar o relatório e preparar a apresentação. Ajustar conforme a participação realmente realizada.
+**Alex Gabriel Alves dos Santos** — implementou o gerador do conjunto sintético, a preparação e a padronização dos dados, o DBSCAN, a avaliação holdout e a persistência dos pontos centrais e métricas.
+
+**Gustavo Muniz dos Anjos** — implementou a interface do site, os formulários e a validação das entradas individuais e CSV, a visualização dos resultados e a publicação estática com GitHub Pages.
+
+**Ambos** — definiram o problema e as regras de simulação, revisaram as métricas e limitações, organizaram a documentação e prepararam a apresentação.

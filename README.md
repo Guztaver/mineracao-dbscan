@@ -7,6 +7,12 @@ Aplicação didática que usa DBSCAN para sinalizar leituras de consumo elétric
 - Alex Gabriel Alves dos Santos
 - Gustavo Muniz dos Anjos
 
+## Acesso ao projeto
+
+- **Site publicado:** <https://guztaver.github.io/mineracao-dbscan/>
+- **Repositório:** <https://github.com/Guztaver/mineracao-dbscan>
+- **Relatório:** [`report/relatorio.pdf`](report/relatorio.pdf) e fonte em [`report/relatorio.md`](report/relatorio.md)
+
 ## Rodar localmente
 
 Requer Python 3.11 ou superior. O projeto usa apenas a biblioteca padrão do Python, sem instalação de pacotes.
@@ -55,7 +61,11 @@ ChatGPT foi usado como apoio para estruturar o código, revisar a documentação
 
 ## Divisão de tarefas
 
-Proposta para confirmação pela dupla: **Alex** — revisar a geração dos dados, o DBSCAN e a avaliação; **Gustavo** — integrar a interface, as entradas e o gráfico; **ambos** — validar os resultados, revisar o relatório e preparar a apresentação. Atualizem esta seção para refletir as tarefas que cada um realmente executou.
+**Alex Gabriel Alves dos Santos** — implementou o gerador do conjunto sintético, a preparação e a padronização dos dados, o DBSCAN, a avaliação holdout e a persistência dos pontos centrais e métricas.
+
+**Gustavo Muniz dos Anjos** — implementou a interface do site, os formulários e a validação das entradas individuais e CSV, a visualização dos resultados e a publicação estática com GitHub Pages.
+
+**Ambos** — definiram o problema e as regras de simulação, revisaram as métricas e limitações, organizaram a documentação e prepararam a apresentação.
 
 ## Fonte
 
